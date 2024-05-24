@@ -1,5 +1,19 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import './components/container.dart';
+import 'package:flutter/widgets.dart';
+import 'components/containerbase.dart';
+import 'components/bodycontainer.dart';
+import 'components/containerborder.dart';
+import 'components/containerradius.dart';
+import 'components/containerradiusall.dart';
+import 'components/containershadow.dart';
+import 'components/containergradient.dart';
+import 'components/containerlinealg.dart';
+import 'components/containerimg.dart';
+import 'components/containerbutton.dart';
+import 'components/containerbsnack.dart';
+import 'components/container2tap.dart';
+import 'components/containershowimg.dart';
 
 void main() {
   runApp(const MyApp());
@@ -89,98 +103,103 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: Container(
-        decoration: BoxDecoration(
-            gradient: LinearGradient(colors: [Colors.pink, Colors.purple])),
-        child: Center(
+      body: const BodyContainer(
+        firstColor: Colors.pink,
+        secondColor: Colors.purple,
+        content: [
+          ContainerBase(color: Colors.red,height: 85, width: 85, texto: "Contenedor base",),
+          ContainerBorder(color: Colors.blue, height: 85, width: 85, texto: "Contenedor borde", border: 1,),
+          ContainerRadius(color: Colors.green, texto: "Contenedor circulo", width: 85, height: 85, border: 1, radius: 50),
+          ContainerRadiusAll(color: Colors.amber, texto: "Contenedor RALL", width: 85, height: 85, border: 1, radiusleft: 20, radiusright: 20),
+          ContainerShadow(color: Colors.blueGrey, texto: "Contenedor Shadow", width: 85, height: 85, border: 1, colorshadow: Colors.black, off1: 5, off2: 5, blurradius: 5),
+          ContainerGradient(texto: "Contenedor Gradient", width: 85, height: 85, border: 1, radius: 0.5, firstColor: Colors.blue, secondColor: Colors.green),
+          ContainerLinealG(texto: "Contenedor LG", width: 85, height: 85, border: 1, color: [Colors.red, Colors.blue, Colors.green], end1: 0.8, end2: 1),
+          ContainerImg(width: 85, height: 85, border: 1, img: "assets/wallpaper.jpg"),
+          ContainerButton(color: Colors.cyan, text: "Contenedor Boton", width: 85, height: 85, border: 1),
+          ContainerBSnack(color: Colors.deepOrange, text: "Contenedor Snackbar", width: 85, height: 85, border: 1),
+          Container2tap(color: Colors.deepPurple, border: 1, texto: "Contenedor Double Tap", width: 85, height: 85),
+          ContainerShowImg(border: 1, color: Colors.indigo, img: "assets/wallpaper.jpg", texto: "Contenedor Dialog", width: 85, height: 85),
+        ],
+      ),
+      // body: Container(
+      //   decoration: const BoxDecoration(
+      //       gradient: LinearGradient(colors: [Colors.pink, Colors.purple])),
+      //   child: const Center(
           // Center is a layout widget. It takes a single child and positions it
           // in the middle of the parent.
-          child: Column(
-            // Column is also a layout widget. It takes a list of children and
-            // arranges them vertically. By default, it sizes itself to fit its
-            // children horizontally, and tries to be as tall as its parent.
-            //
-            // Column has various properties to control how it sizes itself and
-            // how it positions its children. Here we use mainAxisAlignment to
-            // center the children vertically; the main axis here is the vertical
-            // axis because Columns are vertical (the cross axis would be
-            // horizontal).
-            //
-            // TRY THIS: Invoke "debug painting" (choose the "Toggle Debug Paint"
-            // action in the IDE, or press "p" in the console), to see the
-            // wireframe for each widget.
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: <Widget>[
-              ContainerItem(color: Colors.red),
-              // const Text(
-              //   'You have pushed the button this many times:',
-              // ),
-              // Text(
-              //   '$_counter',
-              //   style: Theme.of(context).textTheme.headlineMedium,
-              // ),
-              // Container(
-              //   margin: EdgeInsets.all(10),
-              //   width: 75,
-              //   height: 75,
-              //   decoration: BoxDecoration(
-              //       gradient: RadialGradient(
-              //           center: Alignment.center,
-              //           radius: 0.5,
-              //           colors: [Colors.cyanAccent, Colors.indigo])),
-              //   child: const Text("Hola madafaka"),
-              //   alignment: Alignment.topLeft,
-              // ),
-              // Container(
-              //   width: 75,
-              //   height: 75,
-              //   decoration: BoxDecoration(
-              //       gradient: LinearGradient(
-              //           colors: [Colors.deepPurple, Colors.lightBlue],
-              //           begin: Alignment.topLeft,
-              //           end: Alignment.bottomRight),
-              //       border: Border.all(width: 2)),
-              //   child: const Text("Hola madafaka"),
-              //   alignment: Alignment.topLeft,
-              // ),
-              // Container(
-              //   width: 75,
-              //   height: 75,
-              //   decoration: BoxDecoration(
-              //       border: Border.all(color: Colors.lightGreen, width: 5),
-              //       color: Colors.purpleAccent,
-              //       boxShadow: [
-              //         BoxShadow(
-              //             color: Colors.black,
-              //             offset: Offset(5, 5),
-              //             blurRadius: 5)
-              //       ]),
-              //   child: const Text("Hola madafaka"),
-              //   alignment: Alignment.topLeft,
-              // ),
-              // InkWell(
-                // onTap: (){
-                //   ScaffoldMessenger.of(context).showSnackBar(
-                //     SnackBar(content: Text("One Tap"))
-                //   );
-                // },
-                // onDoubleTap: () {
-                //   ScaffoldMessenger.of(context).showSnackBar(
-                //     SnackBar(content: Text("Double tap"))
-                //   );
-                // },
-                // child: Container(
-                //   width: 150,
-                //   height: 150,
-                //   decoration: BoxDecoration(
-                //       image: DecorationImage(
-                //           image: AssetImage("assets/wallpaper.jpg"))),
-                // ),
-              // )
-            ],
-          ),
-        ),
-      ),
+      //     child: Column(
+      //       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      //       children: <Widget>[
+      //         ContainerItem(color: Colors.red),
+      //         Text(
+      //           'Contenedores',
+      //         ),
+      // Text(
+      //   '$_counter',
+      //   style: Theme.of(context).textTheme.headlineMedium,
+      // ),
+      // Container(
+      //   margin: EdgeInsets.all(10),
+      //   width: 75,
+      //   height: 75,
+      //   decoration: BoxDecoration(
+      //       gradient: RadialGradient(
+      //           center: Alignment.center,
+      //           radius: 0.5,
+      //           colors: [Colors.cyanAccent, Colors.indigo])),
+      //   child: const Text("Hola madafaka"),
+      //   alignment: Alignment.topLeft,
+      // ),
+      // Container(
+      //   width: 75,
+      //   height: 75,
+      //   decoration: BoxDecoration(
+      //       gradient: LinearGradient(
+      //           colors: [Colors.deepPurple, Colors.lightBlue],
+      //           begin: Alignment.topLeft,
+      //           end: Alignment.bottomRight),
+      //       border: Border.all(width: 2)),
+      //   child: const Text("Hola madafaka"),
+      //   alignment: Alignment.topLeft,
+      // ),
+      // Container(
+      //   width: 75,
+      //   height: 75,
+      //   decoration: BoxDecoration(
+      //       border: Border.all(color: Colors.lightGreen, width: 5),
+      //       color: Colors.purpleAccent,
+      //       boxShadow: [
+      //         BoxShadow(
+      //             color: Colors.black,
+      //             offset: Offset(5, 5),
+      //             blurRadius: 5)
+      //       ]),
+      //   child: const Text("Hola madafaka"),
+      //   alignment: Alignment.topLeft,
+      // ),
+      // InkWell(
+      // onTap: (){
+      //   ScaffoldMessenger.of(context).showSnackBar(
+      //     SnackBar(content: Text("One Tap"))
+      //   );
+      // },
+      // onDoubleTap: () {
+      //   ScaffoldMessenger.of(context).showSnackBar(
+      //     SnackBar(content: Text("Double tap"))
+      //   );
+      // },
+      // child: Container(
+      //   width: 150,
+      //   height: 150,
+      //   decoration: BoxDecoration(
+      //       image: DecorationImage(
+      //           image: AssetImage("assets/wallpaper.jpg"))),
+      // ),
+      // )
+      //       ],
+      //     ),
+      //   ),
+      // ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
         tooltip: 'Increment',
