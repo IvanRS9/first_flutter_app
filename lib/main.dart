@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './components/container.dart';
 
 void main() {
   runApp(const MyApp());
@@ -110,6 +111,7 @@ class _MyHomePageState extends State<MyHomePage> {
             // wireframe for each widget.
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
+              ContainerItem(color: Colors.red),
               // const Text(
               //   'You have pushed the button this many times:',
               // ),
@@ -117,64 +119,64 @@ class _MyHomePageState extends State<MyHomePage> {
               //   '$_counter',
               //   style: Theme.of(context).textTheme.headlineMedium,
               // ),
-              Container(
-                margin: EdgeInsets.all(10),
-                width: 75,
-                height: 75,
-                decoration: BoxDecoration(
-                    gradient: RadialGradient(
-                        center: Alignment.center,
-                        radius: 0.5,
-                        colors: [Colors.cyanAccent, Colors.indigo])),
-                child: const Text("Hola madafaka"),
-                alignment: Alignment.topLeft,
-              ),
-              Container(
-                width: 75,
-                height: 75,
-                decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                        colors: [Colors.deepPurple, Colors.lightBlue],
-                        begin: Alignment.topLeft,
-                        end: Alignment.bottomRight),
-                    border: Border.all(width: 2)),
-                child: const Text("Hola madafaka"),
-                alignment: Alignment.topLeft,
-              ),
-              Container(
-                width: 75,
-                height: 75,
-                decoration: BoxDecoration(
-                    border: Border.all(color: Colors.lightGreen, width: 5),
-                    color: Colors.purpleAccent,
-                    boxShadow: [
-                      BoxShadow(
-                          color: Colors.black,
-                          offset: Offset(5, 5),
-                          blurRadius: 5)
-                    ]),
-                child: const Text("Hola madafaka"),
-                alignment: Alignment.topLeft,
-              ),
-              InkWell(
-                onTap: (){
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text("One Tap"))
-                  );
-                },
-                onDoubleTap: () {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text("Double tap"))
-                  );
-                },
-                child: Container(
-                  width: 150,
-                  height: 150,
-                  decoration: BoxDecoration(
-                      image: DecorationImage(
-                          image: AssetImage("assets/wallpaper.jpg"))),
-                ),
-              )
+              // Container(
+              //   margin: EdgeInsets.all(10),
+              //   width: 75,
+              //   height: 75,
+              //   decoration: BoxDecoration(
+              //       gradient: RadialGradient(
+              //           center: Alignment.center,
+              //           radius: 0.5,
+              //           colors: [Colors.cyanAccent, Colors.indigo])),
+              //   child: const Text("Hola madafaka"),
+              //   alignment: Alignment.topLeft,
+              // ),
+              // Container(
+              //   width: 75,
+              //   height: 75,
+              //   decoration: BoxDecoration(
+              //       gradient: LinearGradient(
+              //           colors: [Colors.deepPurple, Colors.lightBlue],
+              //           begin: Alignment.topLeft,
+              //           end: Alignment.bottomRight),
+              //       border: Border.all(width: 2)),
+              //   child: const Text("Hola madafaka"),
+              //   alignment: Alignment.topLeft,
+              // ),
+              // Container(
+              //   width: 75,
+              //   height: 75,
+              //   decoration: BoxDecoration(
+              //       border: Border.all(color: Colors.lightGreen, width: 5),
+              //       color: Colors.purpleAccent,
+              //       boxShadow: [
+              //         BoxShadow(
+              //             color: Colors.black,
+              //             offset: Offset(5, 5),
+              //             blurRadius: 5)
+              //       ]),
+              //   child: const Text("Hola madafaka"),
+              //   alignment: Alignment.topLeft,
+              // ),
+              // InkWell(
+                // onTap: (){
+                //   ScaffoldMessenger.of(context).showSnackBar(
+                //     SnackBar(content: Text("One Tap"))
+                //   );
+                // },
+                // onDoubleTap: () {
+                //   ScaffoldMessenger.of(context).showSnackBar(
+                //     SnackBar(content: Text("Double tap"))
+                //   );
+                // },
+                // child: Container(
+                //   width: 150,
+                //   height: 150,
+                //   decoration: BoxDecoration(
+                //       image: DecorationImage(
+                //           image: AssetImage("assets/wallpaper.jpg"))),
+                // ),
+              // )
             ],
           ),
         ),
