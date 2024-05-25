@@ -21,31 +21,50 @@ class ContainerShowImg extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        AlertDialog(
-          title: Text('Dialog del contenedor'),
-          content: const SingleChildScrollView(
-            child: Text('Este es el texto del dialog'),
-          ),
-          actions: <Widget>[
-            TextButton(
-              child: const Text("Cerrar"),
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-            )
-          ]
+        showDialog(
+          context: context,
+          builder: (BuildContext context) {
+            return AlertDialog(
+              title: Text(
+                "Contenedor con imagen en dialog",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 20,
+                ),
+              ),
+              content: Image.asset(img),
+              backgroundColor: color,
+              actions: [
+                TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                  child: Center(
+                    child: Text(
+                      "Cerrar",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20,
+                      )
+                    )
+                  ),
+                ),
+              ],
+            );
+          },
         );
       },
       child: Container(
         width: width,
         height: height,
         decoration: BoxDecoration(
-          border: Border.all(width: border)
+          border: Border.all(
+            color: color,
+            width: border,
+          ),
         ),
-        child: Center(
-          child: Text(texto)
-        ),
-      )
+        child: Image.asset(img),
+      ),
     );
   }
 }

@@ -118,7 +118,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ContainerButton(color: Colors.cyan, text: "Contenedor Boton", width: 85, height: 85, border: 1),
           ContainerBSnack(color: Colors.deepOrange, text: "Contenedor Snackbar", width: 85, height: 85, border: 1),
           Container2tap(color: Colors.deepPurple, border: 1, texto: "Contenedor Double Tap", width: 85, height: 85),
-          ContainerShowImg(border: 1, color: Colors.indigo, img: "assets/wallpaper.jpg", texto: "Contenedor Dialog", width: 85, height: 85),
+          ContainerShowImg(border: 1, color: Colors.indigo, img: "assets/wallpaper.jpg", texto: "Contenedor con dialog", width: 85, height: 85)
         ],
       ),
       // body: Container(
