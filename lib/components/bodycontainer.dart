@@ -8,7 +8,7 @@ class BodyContainer extends StatelessWidget {
   const BodyContainer(
       {required this.firstColor,
       required this.secondColor,
-      required this.content});
+      required this.content,});
 
   @override
   Widget build(BuildContext context) {
@@ -16,11 +16,15 @@ class BodyContainer extends StatelessWidget {
       decoration: BoxDecoration(
           gradient: LinearGradient(colors: [firstColor, secondColor])),
       child: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: content
-              .map((widget) => Expanded(child: Center(child: widget)))
-              .toList(),
+        child: Padding(
+          padding: const EdgeInsets.all(100),
+          child: GridView.count(
+            crossAxisCount: 3, // 3 columnas
+            mainAxisSpacing: 8.0,
+            crossAxisSpacing: 8.0,
+            childAspectRatio: 1, // Proporción de aspecto 1:1
+            children: content.map((widget) => Center(child: SizedBox(child: widget))).toList(),
+          ),
         ),
       ),
     );

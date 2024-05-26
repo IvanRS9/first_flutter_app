@@ -20,7 +20,7 @@ class Container2tap extends StatelessWidget {
     return InkWell(
       onDoubleTap: () {
         ScaffoldMessenger.of(context)
-            .showSnackBar(SnackBar(content: Text("Contenedor Double Tap")));
+            .showSnackBar(SnackBar(content: Text("Contenedor Double Tap"),duration: Duration(seconds: 1),));
       },
       child: Container(
         width: width,

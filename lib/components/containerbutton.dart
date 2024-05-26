@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ContainerButton extends StatelessWidget {
-  final String text;
+  final String texto;
   final Color color;
   final double width;
   final double height;
@@ -9,7 +9,7 @@ class ContainerButton extends StatelessWidget {
 
   const ContainerButton({
     required this.color,
-    required this.text,
+    required this.texto,
     required this.width,
     required this.height,
     required this.border,
@@ -18,7 +18,14 @@ class ContainerButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => print('Button pressed'),
+      onTap: () => {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('Contenedor presionado'),
+            duration: Duration(seconds: 1),
+          ),
+        )
+      },
       child: Container(
         width: width,
         height: height,
@@ -26,7 +33,7 @@ class ContainerButton extends StatelessWidget {
           color: color,
           border: Border.all(width: border)
         ),
-        child: Center(child: Text(text),),
+        child: Center(child: Text(texto),),
       ),
 
     );

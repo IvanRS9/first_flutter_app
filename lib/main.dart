@@ -14,6 +14,9 @@ import 'components/containerbutton.dart';
 import 'components/containerbsnack.dart';
 import 'components/container2tap.dart';
 import 'components/containershowimg.dart';
+import 'components/containerborderlt.dart';
+import 'components/containerovalo.dart';
+import 'components/containersized.dart';
 
 void main() {
   runApp(const MyApp());
@@ -27,7 +30,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter App Demo',
+      title: 'First App Flutter',
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -48,7 +51,7 @@ class MyApp extends StatelessWidget {
             ColorScheme.fromSeed(seedColor: Color.fromARGB(0, 0, 255, 195)),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'no one'),
+      home: const MyHomePage(title: 'Contenedores en Flutter'),
     );
   }
 }
@@ -98,29 +101,36 @@ class _MyHomePageState extends State<MyHomePage> {
         // TRY THIS: Try changing the color here to a specific color (to
         // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
         // change color while the other colors stay the same.
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        backgroundColor: const Color.fromRGBO(25, 25, 112, 1),
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
+        title: Text(widget.title, style: const TextStyle(color: Colors.white), textAlign: TextAlign.center,),
       ),
       body: const BodyContainer(
-        firstColor: Colors.pink,
-        secondColor: Colors.purple,
+        firstColor: Color.fromRGBO(97, 67, 133, 1),
+        secondColor: Color.fromRGBO(81, 99, 149, 1),
         content: [
-          ContainerBase(color: Colors.red,height: 85, width: 85, texto: "Contenedor base",),
-          ContainerBorder(color: Colors.blue, height: 85, width: 85, texto: "Contenedor borde", border: 1,),
-          ContainerRadius(color: Colors.green, texto: "Contenedor circulo", width: 85, height: 85, border: 1, radius: 50),
-          ContainerRadiusAll(color: Colors.amber, texto: "Contenedor RALL", width: 85, height: 85, border: 1, radiusleft: 20, radiusright: 20),
-          ContainerShadow(color: Colors.blueGrey, texto: "Contenedor Shadow", width: 85, height: 85, border: 1, colorshadow: Colors.black, off1: 5, off2: 5, blurradius: 5),
-          ContainerGradient(texto: "Contenedor Gradient", width: 85, height: 85, border: 1, radius: 0.5, firstColor: Colors.blue, secondColor: Colors.green),
-          ContainerLinealG(texto: "Contenedor LG", width: 85, height: 85, border: 1, color: [Colors.red, Colors.blue, Colors.green], end1: 0.8, end2: 1),
-          ContainerImg(width: 85, height: 85, border: 1, img: "assets/wallpaper.jpg"),
-          ContainerButton(color: Colors.cyan, text: "Contenedor Boton", width: 85, height: 85, border: 1),
-          ContainerBSnack(color: Colors.deepOrange, text: "Contenedor Snackbar", width: 85, height: 85, border: 1),
-          Container2tap(color: Colors.deepPurple, border: 1, texto: "Contenedor Double Tap", width: 85, height: 85),
-          ContainerShowImg(border: 1, color: Colors.indigo, img: "assets/wallpaper.jpg", texto: "Contenedor con dialog", width: 85, height: 85)
+          ContainerBase(color: Colors.red,height: 100, width: 100, texto: "Contenedor base",),
+          ContainerBorder(color: Colors.blue, height: 100, width: 100, texto: "Contenedor borde", border: 1,),
+          ContainerBorderLT(color: Colors.green, texto: "Contenedor borde LeftTop", width: 100, height: 100, borderleft: 1, bordertop: 1),
+          ContainerRadius(color: Colors.brown, texto: "Contenedor circulo", width: 100, height: 100, border: 1),
+          ContainerOvalo(color: Colors.teal, texto: "Contenedor redondeado", width: 100, height: 100, border: 1),
+          ContainerRadiusAll(color: Colors.amber, texto: "Contenedor Radius LeftRight", width: 100, height: 100, border: 1, radiusleft: 30, radiusright: 30),
+          ContainerShadow(color: Colors.blueGrey, texto: "Contenedor Shadow", width: 100, height: 100, border: 1, colorshadow: Colors.black, off1: 5, off2: 5, blurradius: 5),
+          ContainerGradient(texto: "Contenedor Radient", width: 100, height: 100, border: 1, radius: 0.5, firstColor: Colors.blue, secondColor: Colors.green),
+          ContainerLinealG(texto: "Contenedor Linear", width: 100, height: 100, border: 1, color: [Colors.red, Colors.blue, Colors.green], end1: 0.8, end2: 1),
+          ContainerImg(width: 100, height: 100, border: 1, img: "assets/wallpaper.jpg"),
+          ContainerBSnack(color: Colors.deepOrange, texto: "Contenedor Snackbar", width: 100, height: 100, border: 1),
+          ContainerButton(color: Colors.cyan, texto: "Contenedor tipo Boton", width: 100, height: 100, border: 1),
+          Container2tap(color: Colors.deepPurple, border: 1, texto: "Contenedor Double Tap", width: 100, height: 100),
+          ContainerShowImg(border: 1, color: Colors.indigo, img: "assets/wallpaper.jpg", texto: "Contenedor con dialog", width: 100, height: 100),
+          ContainerSized(color: Color.fromARGB(255, 189, 125, 125), texto: "Contenedor Sizedbox", width: 100, height: 100, border: 1),
         ],
       ),
+      // Codigo visto en clase
+      // 
+
+
       // body: Container(
       //   decoration: const BoxDecoration(
       //       gradient: LinearGradient(colors: [Colors.pink, Colors.purple])),

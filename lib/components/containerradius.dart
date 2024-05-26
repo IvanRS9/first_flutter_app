@@ -6,15 +6,13 @@ class ContainerRadius extends StatelessWidget {
   final double width;
   final double height;
   final double border;
-  final double radius;
 
   const ContainerRadius(
       {required this.color,
       required this.texto,
       required this.width,
       required this.height,
-      required this.border,
-      required this.radius});
+      required this.border,});
 
   @override
   Widget build(BuildContext context) {
@@ -22,11 +20,17 @@ class ContainerRadius extends StatelessWidget {
       width: width,
       height: height,
       decoration: BoxDecoration(
-          color: color,
-          border: Border.all(width: border),
-          borderRadius: BorderRadius.circular(radius)),
+        color: color,
+        shape: BoxShape.circle,
+        border: Border.all(width: border)
+      ),
       child: Center(
-        child: Text(texto),
+        child: Text(
+          texto,
+          style: const TextStyle(
+            color: Colors.white,
+          ),
+        ),
       ),
     );
   }
